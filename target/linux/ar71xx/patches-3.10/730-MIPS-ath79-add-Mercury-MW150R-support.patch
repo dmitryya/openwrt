@@ -1,0 +1,43 @@
+Index: linux-3.10.49/arch/mips/ath79/Kconfig
+===================================================================
+--- linux-3.10.49.orig/arch/mips/ath79/Kconfig
++++ linux-3.10.49/arch/mips/ath79/Kconfig
+@@ -1034,6 +1034,17 @@ config ATH79_MACH_BHU_BXU2000N2_A
+ 	select ATH79_DEV_USB
+ 	select ATH79_DEV_WMAC
+ 
++config ATH79_MACH_MERCURY_MW150R
++	bool "Mercury MW150R support"
++	select SOC_AR933X
++	select ATH79_DEV_AP9X_PCI if PCI
++	select ATH79_DEV_ETH
++	select ATH79_DEV_GPIO_BUTTONS
++	select ATH79_DEV_LEDS_GPIO
++	select ATH79_DEV_M25P80
++	select ATH79_DEV_USB
++	select ATH79_DEV_WMAC
++
+ endmenu
+ 
+ config SOC_AR71XX
+Index: linux-3.10.49/arch/mips/ath79/Makefile
+===================================================================
+--- linux-3.10.49.orig/arch/mips/ath79/Makefile
++++ linux-3.10.49/arch/mips/ath79/Makefile
+@@ -142,3 +142,4 @@ obj-$(CONFIG_ATH79_MACH_WZR_HP_G450H)	+=
+ obj-$(CONFIG_ATH79_MACH_ZCN_1523H)	+= mach-zcn-1523h.o
+ obj-$(CONFIG_ATH79_MACH_CARAMBOLA2)	+= mach-carambola2.o
+ obj-$(CONFIG_ATH79_MACH_NBG6716)	+= mach-nbg6716.o
++obj-$(CONFIG_ATH79_MACH_MERCURY_MW150R) += mach-mercury-mw150r.o
+Index: linux-3.10.49/arch/mips/ath79/machtypes.h
+===================================================================
+--- linux-3.10.49.orig/arch/mips/ath79/machtypes.h
++++ linux-3.10.49/arch/mips/ath79/machtypes.h
+@@ -183,6 +183,7 @@ enum ath79_mach_type {
+ 	ATH79_MACH_WZR_HP_G450H,	/* Buffalo WZR-HP-G450H */
+ 	ATH79_MACH_ZCN_1523H_2,		/* Zcomax ZCN-1523H-2-xx */
+ 	ATH79_MACH_ZCN_1523H_5,		/* Zcomax ZCN-1523H-5-xx */
++	ATH79_MACH_MERCURY_MW150R,      /* Mercury MW150R */
+ };
+ 
+ #endif /* _ATH79_MACHTYPE_H */
