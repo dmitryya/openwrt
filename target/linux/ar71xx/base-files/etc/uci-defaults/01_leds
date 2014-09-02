@@ -436,6 +436,16 @@ zcn-1523h-5)
 	ucidef_set_led_netdev "lan1" "lan1" "zcn-1523h:green:lan1" "eth0"
 	ucidef_set_led_netdev "lan2" "lan2" "zcn-1523h:green:lan2" "eth1"
 	;;
+
+mercury-mw150r)
+	ucidef_set_led_netdev "wan" "WAN" "mercury:green:wan" "eth1"
+	ucidef_set_led_switch "lan1" "LAN1" "mercury:green:lan1" "switch0" "0x02"
+	ucidef_set_led_switch "lan2" "LAN2" "mercury:green:lan2" "switch0" "0x04"
+	ucidef_set_led_switch "lan3" "LAN3" "mercury:green:lan3" "switch0" "0x08"
+	ucidef_set_led_switch "lan4" "LAN4" "mercury:green:lan4" "switch0" "0x10"
+	ucidef_set_led_wlan "wlan" "WLAN" "mercury:green:wlan" "phy0tpt"
+	;;
+
 esac
 
 ucidef_commit_leds
