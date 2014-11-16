@@ -8,7 +8,7 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=curl
-PKG_VERSION:=7.36.0
+PKG_VERSION:=7.38.0
 PKG_RELEASE:=1
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.bz2
@@ -18,7 +18,7 @@ PKG_SOURCE_URL:=http://curl.haxx.se/download/ \
 	ftp://ftp.planetmirror.com/pub/curl/ \
 	http://www.mirrormonster.com/curl/download/ \
 	http://curl.mirrors.cyberservers.net/download/
-PKG_MD5SUM:=e6d1f9d1b59da5062109ffe14e0569a4
+PKG_MD5SUM:=af6b3c299bd891f43cb5f76c4091b7b4
 
 PKG_LICENSE:=MIT
 PKG_LICENSE_FILES:=COPYING
@@ -97,6 +97,7 @@ CONFIGURE_ARGS += \
 	--disable-manual \
 	--disable-verbose \
 	--without-ca-bundle \
+	$(if $(CONFIG_LIBCURL_OPENSSL),--with-ca-path=/etc/ssl/certs/) \
 	--without-krb4 \
 	--without-libidn \
 	--without-nss \
@@ -144,7 +145,7 @@ define Build/InstallDev
 	$(CP) $(PKG_BUILD_DIR)/libcurl.pc $(1)/usr/lib/pkgconfig/
 	$(SED) 's,-L$$$${exec_prefix}/lib,,g' $(1)/usr/bin/curl-config
 	[ -n "$(TARGET_LDFLAGS)" ] && $(SED) 's#$(TARGET_LDFLAGS)##g' $(1)/usr/lib/pkgconfig/libcurl.pc || true
-	ln -sf $(STAGING_DIR)/usr/bin/curl-config $(2)/bin/
+	$(LN) $(STAGING_DIR)/usr/bin/curl-config $(2)/bin/
 endef
 
 define Package/curl/install

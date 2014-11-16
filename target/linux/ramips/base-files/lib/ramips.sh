@@ -25,6 +25,12 @@ ramips_board_detect() {
 	*"Edimax 3g-6200nl")
 		name="3g-6200nl"
 		;;
+	*"A5-V11")
+		name="a5-v11"
+		;;
+	*"Airlink101 AR670W")
+		name="ar670w"
+		;;
 	*"Airlink101 AR725W")
 		name="ar725w"
 		;;
@@ -72,6 +78,12 @@ ramips_board_detect() {
 		;;
 	*"Aztech HW550-3G")
 		name="hw550-3g"
+		;;
+	*"Buffalo WSR-600")
+		name="wsr-600"
+		;;
+	*"Buffalo WSR-1166")
+		name="wsr-1166"
 		;;
 	*"CY-SWR1100")
 		name="cy-swr1100"
@@ -157,6 +169,9 @@ ramips_board_detect() {
 	*"HILINK HLK-RM04")
 		name="hlk-rm04"
 		;;
+	*"HOOTOO HT-TM02")
+		name="ht-tm02"
+		;;
 	*"HAME MPR-A1")
  		name="mpr-a1"
  		;;
@@ -165,6 +180,9 @@ ramips_board_detect() {
  		;;
 	*"Kingston MLW221")
 		name="mlw221"
+		;;
+	*"Linksys E1700")
+		name="e1700"
 		;;
 	*"Planex MZK-750DHP")
 		name="mzk-750dhp"
@@ -177,6 +195,12 @@ ramips_board_detect() {
 		;;
 	*"NexAira BC2")
 		name="bc2"
+		;;
+	*"Nexx WT1520")
+		name="wt1520"
+		;;
+	*"Nexx WT3020")
+		name="wt3020"
 		;;
 	*"NW718")
 		name="nw718"
@@ -216,6 +240,9 @@ ramips_board_detect() {
 		;;
 	*"Asus RP-N53")
 		name="rp-n53"
+		;;
+	*"Ralink MT7620a + MT7530 evaluation board")
+		name="mt7620a_mt7530"
 		;;
 	*"RT-G32 B1")
 		name="rt-g32-b1"
@@ -333,6 +360,12 @@ ramips_board_detect() {
 		;;
 	*"Lenovo Y1S")
 		name="y1s"
+		;;
+	*"Mediatek MT7621 evaluation board")
+		name="mt7621"
+		;;
+	*"Mediatek MT7628AN evaluation board")
+		name="mt7628"
 		;;
 	*)
 		name="generic"
